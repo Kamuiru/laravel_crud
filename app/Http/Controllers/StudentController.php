@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function index(Student $student){
-        $students = Student::get();
+        $students = Student::latest()->filter(request(['search']))->get();
         return view('students.index')-> with('students', $students);
     }
     public function createNew(){
@@ -64,5 +65,8 @@ class StudentController extends Controller
         return back()->with('status', 'deleted successfully');
 
     }
+
+    
+
 
 }

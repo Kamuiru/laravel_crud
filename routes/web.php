@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\RegisterController;
+
+Route::post('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store'])->name('login');

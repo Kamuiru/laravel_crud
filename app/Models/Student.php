@@ -15,4 +15,11 @@ class Student extends Model
         'mobile',
     ];
 
+    public function scopeFilter($query, array $filters){
+        if($filters['search'] ?? false){
+            $query->where('name', 'regexp', request(['search']))
+                  ->orwhere('address', 'regexp', request(['search']));
+        }
+    }
+
 }

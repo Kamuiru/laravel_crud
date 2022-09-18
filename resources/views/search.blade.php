@@ -1,15 +1,6 @@
 @extends('layouts.app')
 @section('content')
 @auth
-<div class="mt-10 ml-2">
-  <a  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" href="{{route('studs.create')}}">Add New</a>
-</div>
-
-@if(session('status'))
-<div class="flex justify-between">
-<div class="text-white bg-blue-500 ml-2 p-3 mt-2 w-8/12" >{{session('status')}}</div> <span id="close">x</span>
-</div>
-@endif
 <div class="container flex justify-start ml-2 mt-5  w-8/12">
     <div class="flex flex-col">
         <div class="w-full">

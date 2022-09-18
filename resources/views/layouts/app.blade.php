@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class = "bg-gray-200">
@@ -22,6 +22,23 @@
         </div>
       @endif
     </nav>
+    
+  @auth
+    <div >
+    <form class="mt-3 ml-2 bg-white rounded lg w-3/12 flex justify-between p-1 flex items-center" action="/students" >
+        
+        <div><input class="!outline-none" type="text" placeholder="search..." name="search"></div>
+        <div>
+        <span>
+            <button type="submit"> <a href="/search"><span class="material-symbols-sharp flex items-center">search
+</span></a></button>
+        </span>
+    </div>
+    </form>
+</div>
+@endauth
+
+
     @yield('content')
 </body>
 </html>
